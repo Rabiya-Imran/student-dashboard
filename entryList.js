@@ -16,7 +16,8 @@ addBtn.addEventListener("click", () => {
 
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "remove";
-  removeBtn.className = "remove";
+  removeBtn.className = "remove"; //Create a class to add css style on button.
+
   removeBtn.onclick = () => {
     listItem.remove();
   };
@@ -25,4 +26,10 @@ addBtn.addEventListener("click", () => {
   StudentList.appendChild(listItem);
 
   input.value = "";
+});
+
+input.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    addBtn.click();
+  }
 });
